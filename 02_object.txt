@@ -1,0 +1,9 @@
+2. Object:
+    -> Instance of the class.
+    
+    -> Eg: public static void main (String[] args) {
+        Car myCar = new Car();
+        myCar.name = "Swift";
+        myCar.brand = "Maruti";
+        myCar.speed = 100;
+    }

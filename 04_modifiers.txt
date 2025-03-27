@@ -1,0 +1,56 @@
+4. Modifiers:
+    -> controls the visibility, behavior nd properties of classes, methods and variables.
+    -> Two types of modifiers: 
+        1. Access Modifiers: controls visibility i.e., who can access the variable/method/class.
+
+            Eg.: class Example{
+                public int a = 10;
+                protected int b = 20;
+                int c = 30;
+                private int d = 40;
+            }
+            public class Main{
+                public static void main(String[] args){
+                    Example ex = new Example();
+                    sysou(ex.a);    //Works (public)
+                    sysou(ex.b);    //Works (protected, same package)
+                    sysou(ex.c);    //Works (default, same package)
+                    sysou(ex.d);    //Error (private, unaccessible)
+                }
+            }
+
+
+        2. Non Access Modifiers: controls behavior (like final, static, abstract, etc)
+            Eg.: class Example{
+                static int counter = 0;
+                final int val = 100;
+
+                Example(){
+                    counter++;
+                }
+
+                static void showCount(){
+                    sysout("Count: " + counter);
+                }
+
+                final void display(){
+                    sysout("Final method cannot be overridden.");
+                }
+            }
+
+            //Example for final
+            class Derive extends Example{
+                void display(){
+                    sysout("Try to override"); // Error: cannot override final method
+                }
+            }
+
+            //Example for static
+            public class main{
+                public static void main(String[] args){
+                    new Example();
+                    new Example();
+                    Example.showCount(); // Will print 2 ,static method can be access without object
+                }
+            }
+    

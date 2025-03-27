@@ -1,0 +1,38 @@
+8. Abstraction:
+    -> it is process of hiding the complex implementation details and showing only the essential features of an object.
+    -> it is implemented using abstract methods (methods without a body), and that method is implemented in the subclass/child class.
+    -> it can also be implemented using interface, in which the methods initialized doesnot have a body.
+
+    -> Eg.: abstract class Animal{
+                public abstract void sound();
+                
+                public void sleep(){    //non abstract method
+                    sysout("Animal is sleeping");
+                }
+            }
+            
+            class Dog extends Animal{
+                @Override
+                void sound(){
+                    sysout("Dog sound is bark");
+                }
+            }
+
+            public class Main{
+                public static void main(String[] args){
+                    Dog myDog = new Dog();
+                    
+                    myDog.sound();  //will print "Sog sound is bark"
+                    myDog.sleep();  //will print "Animal is sleeping" as it is inherited method
+                }
+            }
+    
+    -> Difference between Abstraction and Interface
+            1. Abstract classes can have abstract and non-abstract methods.
+            1. Interface can have only abstract methods. Since Java 8, it can have default and static methods.
+
+            2. Abstract classes does not support multiple inheritance.
+            2. Interface supports multiple inheritance.
+
+            3. Abstract class can have final, non-final, static and non-static variables.
+            3. Interface has only static and final variables.

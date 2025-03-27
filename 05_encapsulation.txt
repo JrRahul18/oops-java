@@ -1,0 +1,43 @@
+5. Encapsulation: 
+    -> Process of initializing data and methods in single class and restricting direct access to them.
+    -> variables are initialized as private.
+    -> public get and set methods are initialized to access and update the value of the variable.
+
+    Eg.: class Car{
+        private String name;
+        private int price;
+        
+        Car(String name, int price){
+            this.name = name;
+            this.price = price;
+        }
+
+        //get method for price
+        public int getPrice(){
+            return price;
+        }
+
+        //get method for name
+        public void getName(){
+            return name;
+        }
+
+        //set method for name
+        public void setName(String newName){
+            this.name = newName;
+        }
+    }
+
+    public class Main{
+        public static void main(String[] args){
+            Car myCar = new Car("Hero", 4000);
+
+            sysout("Price: ", myCar.getPrice());      //Will print price
+            
+            myCar.name = "Toyota";      //Will give error
+
+            myCar.setName("Toyota");
+
+            sysout("Name: ", myCar.getName());      //Will print Toyota
+        }
+    }

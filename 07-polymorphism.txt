@@ -1,0 +1,60 @@
+7. Polymorphism:
+    -> it means "many forms" and it allows one interface to be used for different data types.
+    -> it allows the same methods to run differently based on the object calling it.
+    -> it helps in enhancing code reusability as same method can be used for different types of objects.
+    -> helps to maintain the code and update it.
+    -> Two types of polymorphism in Java:
+        1. Compile-Time Polymorphism (Method Overloading): it allows multiple methods with same name in the same class buyt different parameters.
+            Eg.:    class Calculator{
+                        int add(int a, int b){
+                            return a+b;
+                        }
+                        int add(int a, int b, int c){
+                            return a+b+c;
+                        }
+                        double add(double a, double b){
+                            return a+b;
+                        }
+                    }
+
+                    public class Main{
+                        public static void main(String[] args){
+                            Calculator myCalc = new Calculator();
+
+                            sysout(myCalc.add(5, 4));   //will run 1st method
+                            
+                            sysout(myCalc.add(5, 4, 1));    //will run 2nd method
+
+                            sysout(myCalc.add(2.5, 6.5));   //will run 3rd method
+                        }
+                    }
+        
+        2. Runtime Polymorphism (Method Overriding): it allows a child class to override the methods inherited from parent class.
+            Eg.:    class Shape{
+                        void printShape(){
+                            sysout("This is a shape.");
+                        }
+                    }
+
+                    class Triangle extends Shape{
+                        @Override
+                        void printShape(){
+                            sysout("This is Triangle.");
+                        }
+                    }
+
+                    class Circle extends Shape{
+                        @Override
+                        void printShape(){
+                            sysout("This is Circle.")
+                        }
+                    }
+
+                    public class Main{
+                        Shape myTriangleShape = new Triangle();
+                        Shape myCircleShape = new Circle();
+
+                        myTriangleShape.printShape();   //will run the overriden method, "This is Triangle."
+                        myCircleShape.printShape();     //will run the overriden method, "This is Circle."
+
+                    }

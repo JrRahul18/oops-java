@@ -1,0 +1,11 @@
+Object Oriented Programming (OOPS)
+
+-> OOPS is about creating objects that contain both data and methods.
+-> It helps to provide clear structure for the program.
+-> And also helps in optimization in the program.
+
+
+
+
+
+

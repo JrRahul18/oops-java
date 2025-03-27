@@ -1,0 +1,105 @@
+6. Inheritance:
+    -> property of class to inehrit attributes and methods of another class.
+    -> this concept includes two classes: subclass and superclass.
+    -> superclass is the parent class, which is being inherited from.
+    -> subclass is the child class, which inherits from parent class.
+    -> Three types of Inheritance: 
+        1. Single Inheritance: class inherits from one parent class.
+            Eg.:    class Animal{
+                        void sound(){
+                            sysout("Animal makes sound");
+                        }
+                    }
+                    class Dog extends Animal{
+                        void bark(){
+                            sysout("Dog barks");
+                        }
+                    }
+
+                    public class Main{
+                        public static void main(String[] args){
+                            Dog myDog = new Dog();
+                            myDog.sound();  //will print "Animal makes sound", since its inherited
+                            myDog.bark();   //child class method
+                        }
+                    }
+        2. Multilevel Inheritance: class inherits from a child class of another class.
+            Eg.:    class Animal{
+                        void sound(){
+                            sysout("Animal makes sound");
+                        }
+                    }
+                    class Dog extends Animal{
+                        void bark(){
+                            sysout("Dog barks");
+                        }
+                    }
+                    class Puppy extends Dog{
+                        void weep(){
+                            sysout("Crying");
+                        }
+                    }
+
+                    public class Main{
+                        public static void main(String[] args){
+                            Puppy myPuppy = new Puppy();
+                            myPuppy.sound();  //will print "Animal makes sound", since its inherited
+                            myPuppy.bark();   //will print "Dog barks"
+                            myPuppy.weep();     //will print "Crying"
+                        }
+                    }
+        3. Hierarchical Inheritance: multiple child classes inherit from the same parent.
+            Eg.:    class Animal{
+                        void sound(){
+                            sysout("Animal makes sound");
+                        }
+                    }
+                    class Dog extends Animal{
+                        void bark(){
+                            sysout("Dog barks");
+                        }
+                    }
+                    class Puppy extends Animal{
+                        void weep(){
+                            sysout("Crying");
+                        }
+                    }
+
+                    public class Main{
+                        public static void main(String[] args){
+                            Dog myDog = new Dog();
+                            Puppy myPuppy = new Puppy();
+
+                            myDog.sound();      //will print "Animal makes sound"
+                            myDog.bark();       //will print "Dog barks"
+
+
+                            myPuppy.sound();  //will print "Animal makes sound", since its inherited
+                            myPuppy.weep();     //will print "Crying"
+                        }
+                    }
+
+    ->super: it used to call the parent class constructor and call the parent class methods from the child class.
+        Eg.:    class Animal{
+                    Animal(){
+                        sysout("Animal constructor");
+                    }
+                }
+
+                class Dog extends Animal{
+                    Dog(){
+                        super();    // calls the parent class constructor
+                        sysout("Dog constructor");
+                    }
+                }
+
+                public class Main{
+                    public static void main(String[] args){
+                        Dog myDog = new Dog();  //will call both the constructor and will print "Animal constructor", "Dog constructor"
+                    }
+                }
+
+    -> Java does not support multiple Inheritance. It means one class cannot inherit from multiple classes to avoid ambiguity.
+
+    -> We can use Interface for the above problem.
+    

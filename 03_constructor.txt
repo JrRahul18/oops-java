@@ -1,0 +1,86 @@
+3. Constructor:
+    -> type of method that is used to initialize objects.
+    -> does not have a return type.
+    -> mainly used to initialze instance variable.
+    -> if no constructor is defined for class, Java provides a default constructor.
+    -> types of constructor:
+        1. No arg constructor: does not take any parameters
+
+            Eg: class Car{
+                String model;
+                int year;
+                Car(){
+                    model = "";
+                    year = 2024;
+                }
+            }
+        
+        2. Parameterized constructor: constructor that takes arguements to initialze an object.
+
+            Eg: class Car{
+                String model;
+                int year;
+                Car(String model, int year){
+                    this.model = model;
+                    this.year = year;
+                }
+            }
+        
+        3. Copy constructor: that creates a new object by copying values from an existing object.
+
+
+            Eg.: class Car{
+                String model;
+                int year;
+                Car(String m, int y){
+                    model = m;
+                    year = y;
+                }
+
+                Car(Car obj){
+                    model = obj.model;
+                    year = obj.year;
+                }
+
+                void display(){
+                    sysout("Model: " + model + "Year: " + year);
+                }
+            }
+            public class Main {
+                public static void main(String[] args) {
+                    Car c1 = new Car("Tesla", 2025);
+                    Car c2 = new Car(c1);  // Copy constructor is called
+                    
+                    c1.display(); //will print "Model: Tesla, Year: 2025"
+                    c2.display(); //will print "Model: Tesla, Year: 2025"
+                }
+            }
+
+    -> Constructor Overloading: java allows multiple constructor in a class with different parameter lists.
+        Eg.: class Student{
+            String name;
+            int age;
+
+            Student() {
+                name = "Unknown";
+                age = 0;
+            }
+
+            Student(String n, int a) {
+                name = n;
+                age = a;
+            }
+            void display() {
+                System.out.println("Name: " + name + ", Age: " + age);
+            }
+        }
+
+        public class Main {
+            public static void main(String[] args) {
+                Student s1 = new Student(); // Calls default constructor
+                Student s2 = new Student("Alice", 20); // Calls parameterized constructor
+
+                s1.display(); // will print "Name: Unknown, Age: 0"
+                s2.display(); // will print "Name: Alice, Age: 20"
+            }
+        }

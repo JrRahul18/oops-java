@@ -1,0 +1,12 @@
+1. Class:
+    -> A blueprint for creating objects.
+    -> Defines attributes (fields/variables) and behaviours (methods).
+
+    -> Eg: class CAR{
+        String name;
+        String brand;
+        int speed;
+        void showspeed(){
+            sysout(speed);
+        }
+    }

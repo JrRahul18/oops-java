@@ -1,0 +1,47 @@
+Interface:
+    -> it is an abstract like class, which is used to group related methods with empty bodies.
+    -> a class can inherit multiple interface, which is not possible in inheriting multiple classes.
+    -> it is a blueprint for class in which we can only declare methods.
+    
+    -> Eg.: interface Animal{
+            void eat();
+            }
+
+            interface Pet{
+                void play();
+            }
+
+            class Dog implements Animal, Pet{
+                public void eat(){
+                    sysout("Dog eating food");
+                }
+
+                public void play(){
+                    sysout("Dog playing");
+                }
+            }
+
+            public class Main{
+                public static void main(String[] args){
+                    Dog myDog = new Dog();
+                    myDog.eat();    //will print "Dog eating food"
+                    myDog.play();   //will print "Dog playing"
+                }
+            }
+        
+        -> now, in Java 8, we can also implement methods using default/static methods.
+
+        ->Eg.: interface Animal {
+                    default void sound() {
+                        System.out.println("Animals making sound.");
+                    }
+                }
+
+                class Dog implements Animal { } // No need to override 'sound()'
+
+                public class Main {
+                    public static void main(String[] args) {
+                        Dog myDog = new Dog();
+                        myDog.sound();  //will print "Animals making sound"
+                    }
+                }
